@@ -1,11 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import constants.Constants;
 
-public class KalkulackaGUI extends JFrame implements ActionListener {
+public class KalkulackaGUI extends JFrame {
 
     private JTextField textField;
     private JPanel buttonPanel;
@@ -40,7 +38,7 @@ public class KalkulackaGUI extends JFrame implements ActionListener {
     private void addButtonComponents() {
         buttonPanel = new JPanel();
         buttonPanel.setBounds(Constants.BUTTON_PANEL_X, Constants.BUTTON_PANEL_Y, Constants.BUTTON_PANEL_WIDTH, Constants.BUTTON_PANEL_HEIGHT);
-        buttonPanel.setLayout(new GridLayout(5, 4, 5, 5));
+        buttonPanel.setLayout(new GridLayout(5, 4, 10, 10));
 
         String[] buttonLabels = {
                 "<-", "AC", "%", "/",
@@ -51,19 +49,17 @@ public class KalkulackaGUI extends JFrame implements ActionListener {
         };
 
         buttons = new JButton[Constants.BUTTON_COUNT];
+
+        KalkulackaLogic logic = new KalkulackaLogic(textField);
+
         for(int i = 0; i < Constants.BUTTON_COUNT; i++){
             buttons[i] = new JButton(buttonLabels[i]);
             buttons[i].setFont(new Font("Arial", Font.PLAIN, Constants.BUTTON_FONT_SIZE));
-            buttons[i].addActionListener (this);
+            buttons[i].addActionListener (logic);
             buttonPanel.add(buttons[i]);
         }
 
         add(buttonPanel);
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
     }
 
