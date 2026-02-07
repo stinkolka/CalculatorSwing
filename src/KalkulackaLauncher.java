@@ -1,3 +1,5 @@
+/* Nikola Kováčová 4800240012 */
+
 import javax.swing.*;
 
 public class KalkulackaLauncher {
