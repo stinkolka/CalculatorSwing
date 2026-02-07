@@ -91,6 +91,7 @@ public class KalkulackaLogic implements ActionListener {
         }
 
         textField.setText(String.valueOf(result));
+
     }
 
 }

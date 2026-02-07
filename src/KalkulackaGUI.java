@@ -55,7 +55,7 @@ public class KalkulackaGUI extends JFrame {
         for(int i = 0; i < Constants.BUTTON_COUNT; i++){
             buttons[i] = new JButton(buttonLabels[i]);
             buttons[i].setFont(new Font("Arial", Font.PLAIN, Constants.BUTTON_FONT_SIZE));
-            buttons[i].addActionListener (logic);
+            buttons[i].addActionListener(logic);
             buttonPanel.add(buttons[i]);
         }
 
